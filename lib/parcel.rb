@@ -16,6 +16,8 @@ class Parcel
     # local and standard have no additional fees
     if volume < 30
       base_cost = 5 + @weight
+    else
+      base_cost = 5 + @weight + volume * 0.2
     end
     additional_fees = 0
 
