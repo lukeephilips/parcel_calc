@@ -6,6 +6,8 @@ require('http')
 require('dotenv')
 Dotenv.load
 
+# set :public_folder, 'public'
+
 get('/') do
   erb(:index)
 end
@@ -16,16 +18,16 @@ get('/output') do
   height = params.fetch('height').to_i
   weight = params.fetch('weight').to_i
   @shipping_speed = params.fetch('shipping-speed')
-  shipping_from = params.fetch('shipping-from')
-  shipping_to = params.fetch('shipping-to')
+  @shipping_from = params.fetch('shipping-from')
+  @shipping_to = params.fetch('shipping-to')
 
   # origins=#{shipping_from}&destinations=#{shipping_to}&units=imperial&key=#{key}
   key = ENV["GOOGLE_MAPS_API_KEY"]
   url = "https://maps.googleapis.com/maps/api/distancematrix/json"
   p url
   location_data = HTTP.get(url, :params => {
-      :origins => shipping_from,
-      :destinations => shipping_to,
+      :origins => @shipping_from,
+      :destinations => @shipping_to,
       :units => "imperial",
       :key => key
     })

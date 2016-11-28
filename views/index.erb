@@ -1,25 +1,27 @@
-<form action="/output">
-  <div class="form-group">
-    <label for="length">Parcel length: </label>
+<form action="/output" id="griffin-form">
+
+  <div class="form-group package-dimensions">
+    <label class="form-control-label" for="length">Parcel length in <a href="https://en.wikipedia.org/wiki/List_of_humorous_units_of_measurement#Wiffle">Wiffles</a>: </label>
     <input type="text" name="length" id="length" class="form-control">
-    <label for="width">Parcel width: </label>
+    <label class="form-control-label" for="width">Parcel width in <a href="https://en.wikipedia.org/wiki/List_of_humorous_units_of_measurement#Wiffle">Wiffles</a>: </label>
     <input type="text" name="width" id="width" class="form-control">
-    <label for="height">Parcel height: </label>
+    <label class="form-control-label" for="height">Parcel height in <a href="https://en.wikipedia.org/wiki/List_of_humorous_units_of_measurement#Wiffle">Wiffles</a>: </label>
     <input type="text" name="height" id="height" class="form-control">
-    <label for="weight">Parcel weight: </label>
+    <label class="form-control-label" for="weight">Parcel weight in stone: </label>
     <input type="text" name="weight" id="weight" class="form-control">
   </div>
   <div class="form-group">
-    <label for="shipping-speed"></label>
+    <label class="form-control-label" for="shipping-speed">Shipping speed:</label>
     <select name="shipping-speed" id="shipping-speed" class="form-control">
       <option value="standard">Standard</option>
       <option value="express">Express</option>
     </select></div>
   <div class="form-group">
-    <label for="shipping-from">Shipping from: </label>
+    <label class="form-control-label" for="shipping-from">Pickup location: (note- our griffins do not fly over water)</label>
     <input type="text" class="form-control" name="shipping-from" id="shipping-from">
-    <label for="shipping-to">Shipping to: </label>
+    <label class="form-control-label" for="shipping-to">Delivery destination: (note- our griffins do not fly over water)</label>
     <input type="text" class="form-control" name="shipping-to" id="shipping-to">
   </div>
-  <button type="submit">Calculate</button>
+  <div id="message"></div>
+  <button type="submit" class="btn btn-success">Calculate</button>
 </form>
