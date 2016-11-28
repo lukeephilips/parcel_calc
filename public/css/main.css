@@ -17,3 +17,10 @@ body {
   font-weight: bold;
   color: grey;
 }
+form {
+  margin-bottom: 30px;
+}
+
+#disclaimer {
+  font-size: 10px;
+}

@@ -1,5 +1,7 @@
-<form action="/output" id="griffin-form">
+<h3>McGruffin's proprietary griffins will deliver your package to any location in record time, guaranteed.</h3>
 
+<form action="/output" id="griffin-form">
+  <label>Please use the selections below to calculate a quote.</label>
   <div class="form-group package-dimensions">
     <label class="form-control-label" for="length">Parcel length in <a href="https://en.wikipedia.org/wiki/List_of_humorous_units_of_measurement#Wiffle">Wiffles</a>: </label>
     <input type="text" name="length" id="length" class="form-control">
@@ -17,11 +19,12 @@
       <option value="express">Express</option>
     </select></div>
   <div class="form-group">
-    <label class="form-control-label" for="shipping-from">Pickup location: (note- our griffins do not fly over water)</label>
+    <label class="form-control-label" for="shipping-from">Pickup location:</label>
     <input type="text" class="form-control" name="shipping-from" id="shipping-from">
-    <label class="form-control-label" for="shipping-to">Delivery destination: (note- our griffins do not fly over water)</label>
+    <label class="form-control-label" for="shipping-to">Delivery destination: (note, our griffins do not fly over water)</label>
     <input type="text" class="form-control" name="shipping-to" id="shipping-to">
   </div>
   <div id="message"></div>
-  <button type="submit" class="btn btn-success">Calculate</button>
+  <button type="submit" class="btn btn-success btn-lg">Calculate</button>
 </form>
+<p id="disclaimer">McGruffin does not take responsibility for claw-damage to parcels.</h3></p>
