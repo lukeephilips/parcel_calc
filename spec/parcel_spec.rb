@@ -22,5 +22,9 @@ describe(Parcel) do
       test_parcel = Parcel.new(4, 4, 2, 1)
       expect(test_parcel.cost_to_ship("standard", 25)).to eq(12.4)
     end
+    it('returns the cost to express ship a small, local parcel') do
+      test_parcel = Parcel.new(2, 2, 2, 1)
+      expect(test_parcel.cost_to_ship("express", 25)).to eq(16)
+    end
   end
 end
