@@ -1,10 +1,25 @@
-<form action="">
+<form action="/output">
   <div class="form-group">
-    <label for="length"></label>
-    <input type="text" name="length">
-    <label for="width"></label>
-    <input type="text" name="width">
-    <label for="height"></label>
-    <input type="text" name="height">
+    <label for="length">Parcel length: </label>
+    <input type="text" name="length" id="length" class="form-control">
+    <label for="width">Parcel width: </label>
+    <input type="text" name="width" id="width" class="form-control">
+    <label for="height">Parcel height: </label>
+    <input type="text" name="height" id="height" class="form-control">
+    <label for="weight">Parcel weight: </label>
+    <input type="text" name="weight" id="weight" class="form-control">
   </div>
+  <div class="form-group">
+    <label for="shipping-speed"></label>
+    <select name="shipping-speed" id="shipping-speed" class="form-control">
+      <option value="standard">Standard</option>
+      <option value="express">Express</option>
+    </select></div>
+  <div class="form-group">
+    <label for="shipping-from">Shipping from: </label>
+    <input type="text" class="form-control" name="shipping-from" id="shipping-from">
+    <label for="shipping-to">Shipping to: </label>
+    <input type="text" class="form-control" name="shipping-to" id="shipping-to">
+  </div>
+  <button type="submit">Calculate</button>
 </form>
