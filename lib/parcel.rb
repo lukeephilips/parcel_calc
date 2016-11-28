@@ -9,6 +9,16 @@ class Parcel
     @length * @width * @height
   end
   define_method(:cost_to_ship) do |method, distance|
-    volume
+    # Formula: volume < 30, fixed($5). After that, scaled
+    # make a hash for delivery methods with cost multipliers
+    # add $1 per pound
+    # local (<100 miles), regional, long distance, flat fee
+    # local and standard have no additional fees
+    if volume < 30
+      base_cost = 5 + @weight
+    end
+    additional_fees = 0
+
+    base_cost + additional_fees
   end
 end
