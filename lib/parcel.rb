@@ -15,19 +15,19 @@ class Parcel
     # local (<200 km), regional, long distance, flat fee
     # local and standard have no additional fees
     # https://maps.googleapis.com/maps/api/distancematrix/json?origins=Portland+OR&destinations=Seattle+WA&units=imperial&key=GOOGLE_MAPS_API_KEY
-    fees = {'standard' => 0, 'express' => 10}
+    fees = {'standard' => 0, 'express' => 100}
 
     if volume < 30
-      base_cost = 5 + @weight
+      base_cost = 50 + @weight
     else
-      base_cost = 5 + @weight + volume * 0.2
+      base_cost = 50 + @weight + volume * 0.2
     end
     if distance < 200
       distance_fee = 0
     elsif distance < 500
-      distance_fee = 5
+      distance_fee = 100
     else
-      distance_fee = 10
+      distance_fee = 300
     end
     additional_fees = fees[speed] + distance_fee
 

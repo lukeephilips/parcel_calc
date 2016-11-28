@@ -1,0 +1,11 @@
+<h2>Your package is on it's way!</h2>
+<p>Your delivery from <%= @shipping_from %> to <%= @shipping_from %> will arrive in <%= @duration %>. The total cost will be $<%= @price %>.</p>
+<p>Receipt for your records:</p>
+
+<ul>
+  <li>Cost: $<%= @price%> cubic nautical feet</li>
+  <li>Parcel size: <%= @parcel.volume %> cubic nautical feet</li>
+  <li>Parcel weight: <%= @weight %> pounds</li>
+  <li>Shipping speed: <%= @shipping_speed %></li>
+  <li>Shipping distance: <%= @miles %></li>
+</ul>

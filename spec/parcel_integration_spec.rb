@@ -14,6 +14,6 @@ describe('the home path', {:type => :feature}) do
     fill_in('shipping-from', :with => "Portland OR")
     fill_in('shipping-to', :with => "Salem OR")
     click_button('Calculate')
-    expect(page).to have_content('Price: $6')
+    expect(page).to have_content('Cost: $51')
   end
 end

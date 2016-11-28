@@ -15,7 +15,7 @@ get('/output') do
   width = params.fetch('width').to_i
   height = params.fetch('height').to_i
   weight = params.fetch('weight').to_i
-  shipping_speed = params.fetch('shipping-speed')
+  @shipping_speed = params.fetch('shipping-speed')
   shipping_from = params.fetch('shipping-from')
   shipping_to = params.fetch('shipping-to')
 
@@ -30,8 +30,11 @@ get('/output') do
       :key => key
     })
   distance = location_data.parse.fetch("rows")[0].fetch("elements")[0].fetch("distance").fetch("value")/1000
+  @miles = location_data.parse.fetch("rows")[0].fetch("elements")[0].fetch("distance").fetch("text")
+  @duration = location_data.parse.fetch("rows")[0].fetch("elements")[0].fetch("duration").fetch("text")
+
   @parcel = Parcel.new(length, width, height, weight)
-  @price = @parcel.cost_to_ship(shipping_speed, distance)
+  @price = @parcel.cost_to_ship(@shipping_speed, distance)
   p @price
   erb(:output)
 end
