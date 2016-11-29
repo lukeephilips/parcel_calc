@@ -37,6 +37,5 @@ get('/output') do
 
   @parcel = Parcel.new(length, width, height, weight)
   @price = @parcel.cost_to_ship(@shipping_speed, distance)
-  p @price
   erb(:output)
 end

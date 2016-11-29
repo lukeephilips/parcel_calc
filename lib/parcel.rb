@@ -31,6 +31,6 @@ class Parcel
     end
     additional_fees = fees[speed] + distance_fee
 
-    base_cost + additional_fees
+    (base_cost + additional_fees)
   end
 end
